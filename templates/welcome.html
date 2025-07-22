@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to AgentNest - The smart CRM for South African real estate agents">
+    <title>Welcome to AgentNest | Getting Started</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .welcome-page {
+            min-height: 100vh;
+            background-color: var(--light-bg);
+            padding: 120px 0 60px;
+        }
+        
+        .welcome-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .welcome-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .welcome-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .welcome-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: white;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        
+        .welcome-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .welcome-content {
+            padding: 40px;
+        }
+        
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .welcome-message h2 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .welcome-message p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .step-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .step-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .step-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .welcome-footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .cta-button {
+            margin-top: 20px;
+        }
+        
+        .welcome-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .feature-tag {
+            background-color: rgba(230, 57, 70, 0.1);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .countdown-container {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .countdown-item {
+            width: 70px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-text {
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">AgentNest</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="welcome-page">
+        <div class="welcome-container">
+            <div class="welcome-card">
+                <div class="welcome-header">
+                    <h1 class="welcome-title">Welcome to AgentNest!</h1>
+                    <p class="welcome-subtitle">Your account has been successfully created and your early access journey begins now.</p>
+                </div>
+                
+                <div class="welcome-content">
+                    <div class="welcome-message">
+                        <h2>Congratulations on joining our Early Access Program</h2>
+                        <p>We're thrilled to have you on board as one of our first users. As an early adopter, you'll have a direct impact on shaping AgentNest into the ultimate CRM tool for South African real estate professionals.</p>
+                    </div>
+                    
+                    <div class="countdown-container">
+                        <div class="countdown-label">Your early access period ends in:</div>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <div class="countdown-number">180</div>
+                                <div class="countdown-text">DAYS</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number">00</div>
+                                <div class="countdown-text">HOURS</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number">00</div>
+                                <div class="countdown-text">MINUTES</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-number">00</div>
+                                <div class="countdown-text">SECONDS</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="welcome-features">
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Lead Management</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Client Tracking</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Task Scheduling</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> WhatsApp Integration</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Email Automation</div>
+                        <div class="feature-tag"><i class="fas fa-check-circle"></i> Performance Analytics</div>
+                    </div>
+                    
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <h3>Complete Your Profile</h3>
+                            <p>Add your agency details and customize your preferences to get started.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">
+                                <i class="fas fa-file-import"></i>
+                            </div>
+                            <h3>Import Your Contacts</h3>
+                            <p>Bring in your existing client base or start adding leads manually.</p>
+                        </div>
+                        
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Explore Features</h3>
+                            <p>Discover all the tools designed specifically for South African agents.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="welcome-footer">
+                        <p>Our team is here to help you get the most out of AgentNest. If you have any questions, don't hesitate to reach out.</p>
+                        <div class="cta-button">
+                            <a href="dashboard.html" class="btn btn-primary">Go to Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-logo">
+                    <h2>AgentNest</h2>
+                    <p>The smart CRM for South African real estate agents</p>
+                </section>
+                <nav class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#early-access">Early Access</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                    </ul>
+                </nav>
+                <section class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgentNest. All rights reserved.</p>
+                <p>Last updated: May 29, 2023</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Countdown timer functionality
+        function updateCountdown() {
+            // This is just for demo purposes
+            // In a real implementation, you would calculate this from the user's signup date
+            const days = parseInt(document.querySelector('.countdown-number').textContent);
+            if (days > 0) {
+                document.querySelector('.countdown-number').textContent = days - 1;
+            }
+        }
+        
+        // Update every 24 hours (for demo purposes)
+        // setInterval(updateCountdown, 86400000);
+    </script>
+</body>
+</html>

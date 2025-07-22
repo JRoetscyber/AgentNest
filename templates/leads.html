@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgentNest Lead Management - Track and manage your real estate leads">
+    <title>Leads | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>AgentNest</h1>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="user-info">
+            <img src="https://via.placeholder.com/50x50" alt="User Avatar">
+            <div>
+                <h3>John Smith</h3>
+                <p>Premium Account</p>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clients.html">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Clients</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="leads.html">
+                        <i class="fas fa-funnel-dollar"></i>
+                        <span>Leads</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tasks.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>Tasks</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messaging.html">
+                        <i class="fas fa-comments"></i>
+                        <span>Messaging</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subscription.html">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Subscription</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search leads...">
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                </button>
+                
+                <button class="add-btn" id="add-lead-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>New Lead</span>
+                </button>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <section class="page-header">
+                <div>
+                    <h1>Lead Management</h1>
+                    <p>Track, nurture, and convert your leads</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-file-import"></i> Import Leads
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                </div>
+            </section>
+            
+            <section class="leads-kanban">
+                <div class="kanban-header">
+                    <h2>Lead Pipeline</h2>
+                    <div class="view-options">
+                        <button class="view-btn">
+                            <i class="fas fa-th-list"></i> List View
+                        </button>
+                        <button class="view-btn active">
+                            <i class="fas fa-columns"></i> Kanban View
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="kanban-board">
+                    <div class="kanban-column">
+                        <div class="kanban-column-header">
+                            <h3>New Leads</h3>
+                            <span class="lead-count">5</span>
+                        </div>
+                        
+                        <div class="kanban-cards">
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type buyer">Buyer</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>David Thompson</h4>
+                                    <p>Looking for 2-bedroom apartment in Sandton</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-tag"></i> R1.5M - R2.5M</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Sandton</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Added: Today</div>
+                                    <div class="lead-contact">
+                                        <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon"><i class="fab fa-whatsapp"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type seller">Seller</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>Sarah Williams</h4>
+                                    <p>Wants to sell 3-bedroom house in Bryanston</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-home"></i> 3 Bed, 2 Bath</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Bryanston</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Added: Yesterday</div>
+                                    <div class="lead-contact">
+                                        <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon"><i class="fab fa-whatsapp"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-column-header">
+                            <h3>Contacted</h3>
+                            <span class="lead-count">3</span>
+                        </div>
+                        
+                        <div class="kanban-cards">
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type buyer">Buyer</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>Michael Johnson</h4>
+                                    <p>Interested in properties in Fourways area</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-tag"></i> R3M - R4.5M</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Fourways</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Last contact: 2 days ago</div>
+                                    <div class="lead-contact">
+                                        <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon"><i class="fab fa-whatsapp"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-column-header">
+                            <h3>Qualified</h3>
+                            <span class="lead-count">4</span>
+                        </div>
+                        
+                        <div class="kanban-cards">
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type buyer">Buyer</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>Jessica Smith</h4>
+                                    <p>Pre-approved for bond, looking in Rosebank</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-tag"></i> Up to R2.8M</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Rosebank</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Viewing scheduled: Tomorrow</div>
+                                    <div class="lead-contact">
+                                        <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon"><i class="fab fa-whatsapp"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-column-header">
+                            <h3>Proposal</h3>
+                            <span class="lead-count">2</span>
+                        </div>
+                        
+                        <div class="kanban-cards">
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type seller">Seller</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>Robert Brown</h4>
+                                    <p>Mandate proposal for property in Camps Bay</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-home"></i> 4 Bed, 3 Bath</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Camps Bay</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Follow-up: 3 days</div>
+                                    <div class="lead-contact">
+                                        <button class="btn-icon"><i class="fas fa-phone"></i></button>
+                                        <button class="btn-icon"><i class="fab fa-whatsapp"></i></button>
+                                        <button class="btn-icon"><i class="fas fa-envelope"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="kanban-column">
+                        <div class="kanban-column-header">
+                            <h3>Closed</h3>
+                            <span class="lead-count">6</span>
+                        </div>
+                        
+                        <div class="kanban-cards">
+                            <div class="lead-card" draggable="true">
+                                <div class="lead-card-header">
+                                    <span class="lead-type buyer">Buyer</span>
+                                    <div class="lead-actions">
+                                        <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                                <div class="lead-card-body">
+                                    <h4>James Wilson</h4>
+                                    <p>Purchased 2-bedroom apartment in Melrose Arch</p>
+                                    <div class="lead-details">
+                                        <div><i class="fas fa-tag"></i> R2.1M</div>
+                                        <div><i class="fas fa-map-marker-alt"></i> Melrose Arch</div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-footer">
+                                    <div class="lead-date">Closed: 1 week ago</div>
+                                    <div class="lead-actions-small">
+                                        <button class="btn-icon"><i class="fas fa-user-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Modal for adding new lead -->
+    <div class="modal" id="add-lead-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Lead</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-lead-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lead-name">Full Name</label>
+                            <input type="text" id="lead-name" name="lead-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-email">Email Address</label>
+                            <input type="email" id="lead-email" name="lead-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lead-phone">Phone Number</label>
+                            <input type="tel" id="lead-phone" name="lead-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-type">Lead Type</label>
+                            <select id="lead-type" name="lead-type">
+                                <option value="buyer">Buyer</option>
+                                <option value="seller">Seller</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lead-source">Lead Source</label>
+                            <select id="lead-source" name="lead-source">
+                                <option value="website">Website</option>
+                                <option value="referral">Referral</option>
+                                <option value="property24">Property24</option>
+                                <option value="private-property">Private Property</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-status">Status</label>
+                            <select id="lead-status" name="lead-status">
+                                <option value="new">New Lead</option>
+                                <option value="contacted">Contacted</option>
+                                <option value="qualified">Qualified</option>
+                                <option value="proposal">Proposal</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lead-requirements">Requirements/Notes</label>
+                        <textarea id="lead-requirements" name="lead-requirements" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-row buyer-fields">
+                        <div class="form-group">
+                            <label for="budget-min">Budget (Min)</label>
+                            <input type="text" id="budget-min" name="budget-min" placeholder="e.g., R1,500,000">
+                        </div>
+                        <div class="form-group">
+                            <label for="budget-max">Budget (Max)</label>
+                            <input type="text" id="budget-max" name="budget-max" placeholder="e.g., R2,500,000">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="lead-area">Preferred Areas</label>
+                            <input type="text" id="lead-area" name="lead-area" placeholder="e.g., Sandton, Bryanston, Rosebank">
+                        </div>
+                        <div class="form-group">
+                            <label for="lead-assigned">Assign To</label>
+                            <select id="lead-assigned" name="lead-assigned">
+                                <option value="self">Myself</option>
+                                <option value="team-member-1">Sarah Johnson</option>
+                                <option value="team-member-2">Mike Peterson</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-lead">Cancel</button>
+                <button class="btn btn-primary" id="save-lead">Save Lead</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container">
+        <div class="toast success">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-content">
+                <p><strong>Success!</strong> Lead added successfully.</p>
+            </div>
+            <button class="toast-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Modal controls
+        const modal = document.getElementById('add-lead-modal');
+        const addLeadBtn = document.getElementById('add-lead-btn');
+        const closeModal = document.querySelector('.modal-close');
+        const cancelBtn = document.getElementById('cancel-lead');
+        
+        addLeadBtn.addEventListener('click', () => {
+            modal.classList.add('show');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+        
+        // Show/hide buyer fields based on lead type
+        document.getElementById('lead-type').addEventListener('change', function() {
+            const buyerFields = document.querySelector('.buyer-fields');
+            if (this.value === 'seller') {
+                buyerFields.style.display = 'none';
+            } else {
+                buyerFields.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>

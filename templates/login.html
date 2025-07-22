@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Log in to AgentNest - The smart CRM for South African real estate agents">
+    <title>Login | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">AgentNest</a></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="early-access.html">Sign Up</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="login-page">
+        <div class="container">
+            <section class="login-container">
+                <div class="login-image">
+                    <img src="https://via.placeholder.com/600x600" alt="AgentNest Dashboard Preview">
+                    <div class="login-testimonial">
+                        <p>"AgentNest has transformed how I manage my clients and leads. It's specifically built for the South African market!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://via.placeholder.com/50x50" alt="Testimonial Author">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Principal Agent, ReMax Cape Town</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="login-form-container">
+                    <form id="login-form">
+                        <h2>Welcome Back</h2>
+                        <p>Log in to your AgentNest account</p>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        
+                        <div class="form-options">
+                            <div class="form-check">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="forgot-password.html" class="forgot-link">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                        
+                        <div class="login-divider">
+                            <span>OR</span>
+                        </div>
+                        
+                        <button type="button" class="btn btn-secondary btn-block">
+                            <i class="fab fa-google"></i> Continue with Google
+                        </button>
+                        
+                        <p class="signup-link">Don't have an account? <a href="early-access.html">Sign up for early access</a></p>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <!-- ...existing code... -->
+    </footer>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Redirect to dashboard after successful login
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>

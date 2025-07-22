@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgentNest Tasks - Manage your appointments and tasks">
+    <title>Tasks | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <!-- Sidebar content similar to other pages -->
+        <!-- ...existing code... -->
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <!-- Header content similar to other pages -->
+            <!-- ...existing code... -->
+        </header>
+        
+        <div class="dashboard-content">
+            <section class="page-header">
+                <div>
+                    <h1>Tasks & Reminders</h1>
+                    <p>Manage your appointments, follow-ups and daily tasks</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                    <button class="btn btn-primary" id="add-task-btn">
+                        <i class="fas fa-plus"></i> New Task
+                    </button>
+                </div>
+            </section>
+            
+            <section class="calendar-controls">
+                <div class="calendar-navigation">
+                    <button class="btn btn-icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h2>June 2023</h2>
+                    <button class="btn btn-icon">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="calendar-view-options">
+                    <button class="view-btn active">Day</button>
+                    <button class="view-btn">Week</button>
+                    <button class="view-btn">Month</button>
+                    <button class="view-btn">List</button>
+                </div>
+            </section>
+            
+            <div class="tasks-layout">
+                <section class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="calendar-day">Monday</div>
+                        <div class="calendar-date">June 12, 2023</div>
+                    </div>
+                    
+                    <div class="time-grid">
+                        <div class="time-slot">
+                            <div class="time-label">8:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">9:00</div>
+                            <div class="time-content">
+                                <div class="calendar-event viewing">
+                                    <div class="event-time">9:30 - 10:30</div>
+                                    <div class="event-details">
+                                        <h4>Property Viewing</h4>
+                                        <p>23 Beach Road, Sea Point</p>
+                                        <div class="event-client">
+                                            <img src="https://via.placeholder.com/24x24" alt="Client Avatar">
+                                            <span>Sarah & Mike Thompson</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">10:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">11:00</div>
+                            <div class="time-content">
+                                <div class="calendar-event meeting">
+                                    <div class="event-time">11:00 - 12:00</div>
+                                    <div class="event-details">
+                                        <h4>Client Meeting</h4>
+                                        <p>Office - Discuss listing requirements</p>
+                                        <div class="event-client">
+                                            <img src="https://via.placeholder.com/24x24" alt="Client Avatar">
+                                            <span>John Peterson</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">12:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">13:00</div>
+                            <div class="time-content">
+                                <div class="calendar-event personal">
+                                    <div class="event-time">13:00 - 14:00</div>
+                                    <div class="event-details">
+                                        <h4>Lunch Break</h4>
+                                        <p>Personal time</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">14:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">15:00</div>
+                            <div class="time-content">
+                                <div class="calendar-event call">
+                                    <div class="event-time">15:30 - 16:30</div>
+                                    <div class="event-details">
+                                        <h4>Follow-up Calls</h4>
+                                        <p>5 potential buyers from weekend show house</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">16:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">17:00</div>
+                            <div class="time-content"></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <aside class="task-sidebar">
+                    <div class="task-sidebar-header">
+                        <h3>Today's Tasks</h3>
+                        <button class="btn btn-sm" id="add-task-small">
+                            <i class="fas fa-plus"></i> Add
+                        </button>
+                    </div>
+                    
+                    <div class="tasks-filter">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">To Do</button>
+                        <button class="filter-btn">Completed</button>
+                    </div>
+                    
+                    <ul class="task-list">
+                        <li class="task-item completed">
+                            <div class="task-checkbox">
+                                <input type="checkbox" id="task-1" checked>
+                                <label for="task-1"></label>
+                            </div>
+                            <div class="task-content">
+                                <p>Email property details to Johnson family</p>
+                                <span class="task-time">9:00 AM</span>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-checkbox">
+                                <input type="checkbox" id="task-2">
+                                <label for="task-2"></label>
+                            </div>
+                            <div class="task-content">
+                                <p>Call Sarah about property valuation</p>
+                                <span class="task-time">11:30 AM</span>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-checkbox">
+                                <input type="checkbox" id="task-3">
+                                <label for="task-3"></label>
+                            </div>
+                            <div class="task-content">
+                                <p>Prepare listing documents for 15 Oak Avenue</p>
+                                <span class="task-time">2:00 PM</span>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-checkbox">
+                                <input type="checkbox" id="task-4">
+                                <label for="task-4"></label>
+                            </div>
+                            <div class="task-content">
+                                <p>Follow up with bond originator about Williams application</p>
+                                <span class="task-time">4:00 PM</span>
+                            </div>
+                            <div class="task-actions">
+                                <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="task-sidebar-section">
+                        <h3>Upcoming</h3>
+                        <div class="upcoming-list">
+                            <div class="upcoming-item">
+                                <div class="upcoming-date">
+                                    <span class="day">13</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="upcoming-content">
+                                    <h4>Property Photoshoot</h4>
+                                    <p>42 Palm Avenue, Camps Bay</p>
+                                    <span class="upcoming-time">10:00 AM</span>
+                                </div>
+                            </div>
+                            <div class="upcoming-item">
+                                <div class="upcoming-date">
+                                    <span class="day">15</span>
+                                    <span class="month">Jun</span>
+                                </div>
+                                <div class="upcoming-content">
+                                    <h4>Show House</h4>
+                                    <p>18 Olive Street, Rosebank</p>
+                                    <span class="upcoming-time">2:00 - 5:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal for adding new task/event -->
+    <div class="modal" id="add-task-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Task or Event</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-tabs">
+                    <button class="modal-tab active" data-tab="event">Event</button>
+                    <button class="modal-tab" data-tab="task">Task</button>
+                </div>
+                
+                <form id="add-event-form" class="tab-content active" data-tab="event">
+                    <div class="form-group">
+                        <label for="event-title">Event Title</label>
+                        <input type="text" id="event-title" name="event-title" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-date">Date</label>
+                            <input type="date" id="event-date" name="event-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-type">Event Type</label>
+                            <select id="event-type" name="event-type">
+                                <option value="viewing">Property Viewing</option>
+                                <option value="meeting">Client Meeting</option>
+                                <option value="call">Call/Follow-up</option>
+                                <option value="personal">Personal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-start">Start Time</label>
+                            <input type="time" id="event-start" name="event-start" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event-end">End Time</label>
+                            <input type="time" id="event-end" name="event-end" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-location">Location</label>
+                        <input type="text" id="event-location" name="event-location">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-client">Related Client (Optional)</label>
+                        <select id="event-client" name="event-client">
+                            <option value="">Select a client</option>
+                            <option value="client-1">John & Jane Smith</option>
+                            <option value="client-2">Sarah Johnson</option>
+                            <option value="client-3">Michael Thompson</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="event-notes">Notes</label>
+                        <textarea id="event-notes" name="event-notes" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="event-reminder" name="event-reminder" checked>
+                        <label for="event-reminder">Set reminder</label>
+                    </div>
+                    
+                    <div class="form-row reminder-options">
+                        <div class="form-group">
+                            <label for="reminder-time">Remind me</label>
+                            <select id="reminder-time" name="reminder-time">
+                                <option value="15">15 minutes before</option>
+                                <option value="30">30 minutes before</option>
+                                <option value="60">1 hour before</option>
+                                <option value="120">2 hours before</option>
+                                <option value="1440">1 day before</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reminder-type">Notification Type</label>
+                            <select id="reminder-type" name="reminder-type">
+                                <option value="app">App Notification</option>
+                                <option value="email">Email</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                
+                <form id="add-task-form" class="tab-content" data-tab="task">
+                    <div class="form-group">
+                        <label for="task-title">Task Title</label>
+                        <input type="text" id="task-title" name="task-title" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-date">Due Date</label>
+                            <input type="date" id="task-date" name="task-date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="task-time">Due Time (Optional)</label>
+                            <input type="time" id="task-time" name="task-time">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority" name="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-related">Related To (Optional)</label>
+                        <select id="task-related" name="task-related">
+                            <option value="">None</option>
+                            <option value="client">Client</option>
+                            <option value="lead">Lead</option>
+                            <option value="property">Property</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group related-select hidden">
+                        <label for="task-related-item">Select Related Item</label>
+                        <select id="task-related-item" name="task-related-item">
+                            <option value="">Select an item</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="task-notes">Notes</label>
+                        <textarea id="task-notes" name="task-notes" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="task-reminder" name="task-reminder" checked>
+                        <label for="task-reminder">Set reminder</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-task">Cancel</button>
+                <button class="btn btn-primary" id="save-task">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container">
+        <!-- Toast messages similar to other pages -->
+        <!-- ...existing code... -->
+    </div>
+
+    <script>
+        // Modal tabs
+        const modalTabs = document.querySelectorAll('.modal-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        modalTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+                
+                // Update active tab
+                modalTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show correct content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.dataset.tab === targetTab) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // Task checkbox behavior
+        document.querySelectorAll('.task-checkbox input').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const taskItem = this.closest('.task-item');
+                if (this.checked) {
+                    taskItem.classList.add('completed');
+                } else {
+                    taskItem.classList.remove('completed');
+                }
+            });
+        });
+        
+        // Modal controls (similar to other pages)
+        const modal = document.getElementById('add-task-modal');
+        const addTaskBtn = document.getElementById('add-task-btn');
+        const addTaskSmallBtn = document.getElementById('add-task-small');
+        const closeModal = document.querySelector('.modal-close');
+        const cancelBtn = document.getElementById('cancel-task');
+        
+        [addTaskBtn, addTaskSmallBtn].forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.classList.add('show');
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+        
+        // Related item selection
+        document.getElementById('task-related').addEventListener('change', function() {
+            const relatedSelect = document.querySelector('.related-select');
+            if (this.value) {
+                relatedSelect.classList.remove('hidden');
+                
+                // Populate the related items based on selection
+                const relatedItemSelect = document.getElementById('task-related-item');
+                relatedItemSelect.innerHTML = '<option value="">Select an item</option>';
+                
+                if (this.value === 'client') {
+                    relatedItemSelect.innerHTML += `
+                        <option value="client-1">John & Jane Smith</option>
+                        <option value="client-2">Sarah Johnson</option>
+                        <option value="client-3">Michael Thompson</option>
+                    `;
+                } else if (this.value === 'lead') {
+                    relatedItemSelect.innerHTML += `
+                        <option value="lead-1">David Thompson (Buyer)</option>
+                        <option value="lead-2">Sarah Williams (Seller)</option>
+                        <option value="lead-3">Michael Johnson (Buyer)</option>
+                    `;
+                } else if (this.value === 'property') {
+                    relatedItemSelect.innerHTML += `
+                        <option value="property-1">23 Beach Road, Sea Point</option>
+                        <option value="property-2">15 Oak Avenue, Rosebank</option>
+                        <option value="property-3">42 Palm Avenue, Camps Bay</option>
+                    `;
+                }
+            } else {
+                relatedSelect.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

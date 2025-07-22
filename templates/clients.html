@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgentNest Client Management - Manage your real estate clients">
+    <title>Clients | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <!-- Same sidebar as dashboard.html -->
+        <!-- ...existing code... -->
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <!-- Same header as dashboard.html -->
+            <!-- ...existing code... -->
+        </header>
+        
+        <div class="dashboard-content">
+            <section class="page-header">
+                <div>
+                    <h1>Client Management</h1>
+                    <p>View and manage all your clients in one place</p>
+                </div>
+                <div class="page-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                    <button class="btn btn-primary" id="add-client-btn">
+                        <i class="fas fa-plus"></i> Add Client
+                    </button>
+                </div>
+            </section>
+            
+            <section class="clients-controls">
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <label for="client-type">Client Type</label>
+                        <select id="client-type">
+                            <option value="all">All Clients</option>
+                            <option value="buyer">Buyers</option>
+                            <option value="seller">Sellers</option>
+                            <option value="both">Both</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="client-status">Status</label>
+                        <select id="client-status">
+                            <option value="all">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="archived">Archived</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="client-sort">Sort By</label>
+                        <select id="client-sort">
+                            <option value="recent">Recently Added</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="last-contact">Last Contact</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="view-options">
+                    <button class="view-btn active">
+                        <i class="fas fa-th-list"></i>
+                    </button>
+                    <button class="view-btn">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <section class="clients-table-container">
+                <table class="clients-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" id="select-all">
+                            </th>
+                            <th>Client</th>
+                            <th>Type</th>
+                            <th>Contact Info</th>
+                            <th>Requirements</th>
+                            <th>Last Contact</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="client-checkbox">
+                            </td>
+                            <td class="client-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Client Avatar">
+                                <div>
+                                    <h3>James & Emily Wilson</h3>
+                                    <span class="client-id">#CLT-2023-001</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="tag tag-buyer">Buyer</span>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div><i class="fas fa-phone"></i> 082 123 4567</div>
+                                    <div><i class="fas fa-envelope"></i> james@example.com</div>
+                                </div>
+                            </td>
+                            <td>
+                                <p>3-bed house, Sandton, R2.5-3.5M</p>
+                            </td>
+                            <td>
+                                <span class="last-contact">2 days ago</span>
+                            </td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="btn-icon" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="client-checkbox">
+                            </td>
+                            <td class="client-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Client Avatar">
+                                <div>
+                                    <h3>Sarah Johnson</h3>
+                                    <span class="client-id">#CLT-2023-002</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="tag tag-seller">Seller</span>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div><i class="fas fa-phone"></i> 083 987 6543</div>
+                                    <div><i class="fas fa-envelope"></i> sarah@example.com</div>
+                                </div>
+                            </td>
+                            <td>
+                                <p>Selling 2-bed apartment in Rosebank</p>
+                            </td>
+                            <td>
+                                <span class="last-contact">Today</span>
+                            </td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="btn-icon" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="client-checkbox">
+                            </td>
+                            <td class="client-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Client Avatar">
+                                <div>
+                                    <h3>Michael Thompson</h3>
+                                    <span class="client-id">#CLT-2023-003</span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="tag tag-both">Both</span>
+                            </td>
+                            <td>
+                                <div class="contact-info">
+                                    <div><i class="fas fa-phone"></i> 084 456 7890</div>
+                                    <div><i class="fas fa-envelope"></i> michael@example.com</div>
+                                </div>
+                            </td>
+                            <td>
+                                <p>Selling in Bryanston, buying in Parkhurst</p>
+                            </td>
+                            <td>
+                                <span class="last-contact">5 days ago</span>
+                            </td>
+                            <td>
+                                <span class="status-badge inactive">Inactive</span>
+                            </td>
+                            <td>
+                                <div class="table-actions">
+                                    <button class="btn-icon" title="View Details">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn-icon" title="Edit">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn-icon" title="More">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">10</button>
+                    <button class="pagination-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Modal for adding new client -->
+    <div class="modal" id="add-client-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Client</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="add-client-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-name">Full Name</label>
+                            <input type="text" id="client-name" name="client-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-email">Email Address</label>
+                            <input type="email" id="client-email" name="client-email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-phone">Phone Number</label>
+                            <input type="tel" id="client-phone" name="client-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="client-type-select">Client Type</label>
+                            <select id="client-type-select" name="client-type">
+                                <option value="buyer">Buyer</option>
+                                <option value="seller">Seller</option>
+                                <option value="both">Both</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client-requirements">Client Requirements</label>
+                        <textarea id="client-requirements" name="client-requirements" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="client-budget">Budget Range (if buyer)</label>
+                            <input type="text" id="client-budget" name="client-budget" placeholder="e.g., R2.5M - R3.5M">
+                        </div>
+                        <div class="form-group">
+                            <label for="client-location">Preferred Location</label>
+                            <input type="text" id="client-location" name="client-location" placeholder="e.g., Sandton, Bryanston">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client-notes">Additional Notes</label>
+                        <textarea id="client-notes" name="client-notes" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-client">Cancel</button>
+                <button class="btn btn-primary" id="save-client">Save Client</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container">
+        <!-- Toast messages similar to dashboard.html -->
+        <!-- ...existing code... -->
+    </div>
+
+    <script>
+        // Modal controls
+        const modal = document.getElementById('add-client-modal');
+        const addClientBtn = document.getElementById('add-client-btn');
+        const closeModal = document.querySelector('.modal-close');
+        const cancelBtn = document.getElementById('cancel-client');
+        
+        addClientBtn.addEventListener('click', () => {
+            modal.classList.add('show');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
+        
+        // Select all checkbox
+        document.getElementById('select-all').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.client-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+    </script>
+</body>
+</html>

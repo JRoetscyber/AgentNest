@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgentNest Dashboard - Manage your real estate business">
+    <title>Dashboard | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>AgentNest</h1>
+            <button id="sidebar-toggle" class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="user-info">
+            <img src="https://via.placeholder.com/50x50" alt="User Avatar">
+            <div>
+                <h3>John Smith</h3>
+                <p>Premium Account</p>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul style="display: flex; flex-direction: column; gap: 0;"></ul>
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="clients.html">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="leads.html">
+                        <i class="fas fa-funnel-dollar"></i>
+                        <span>Leads</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tasks.html">
+                        <i class="fas fa-tasks"></i>
+                        <span>Tasks</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="messaging.html">
+                        <i class="fas fa-comments"></i>
+                        <span>Messaging</span>
+                        <span class="badge">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subscription.html">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Subscription</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search clients, leads, or tasks...">
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                </button>
+                
+                <button class="add-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>New</span>
+                </button>
+            </div>
+        </header>
+        
+        <div class="dashboard-content">
+            <section class="welcome-section">
+                <h1>Welcome back, John!</h1>
+                <p>Here's an overview of your real estate business today</p>
+            </section>
+            
+            <section class="stats-section">
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>New Leads</h3>
+                        <p class="stats-number">12</p>
+                        <p class="stats-trend positive">
+                            <i class="fas fa-arrow-up"></i> 23% from last week
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Tasks Due</h3>
+                        <p class="stats-number">7</p>
+                        <p class="stats-trend negative">
+                            <i class="fas fa-arrow-up"></i> 5% from yesterday
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Active Clients</h3>
+                        <p class="stats-number">28</p>
+                        <p class="stats-trend positive">
+                            <i class="fas fa-arrow-up"></i> 12% from last month
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <div class="stats-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stats-info">
+                        <h3>Today's Viewings</h3>
+                        <p class="stats-number">3</p>
+                        <p class="stats-trend neutral">
+                            Same as yesterday
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="dashboard-grid">
+                <section class="today-schedule">
+                    <div class="section-header">
+                        <h2>Today's Schedule</h2>
+                        <a href="tasks.html" class="view-all">View All</a>
+                    </div>
+                    
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <div class="schedule-time">
+                                <span>09:30</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h3>Property Viewing</h3>
+                                <p>23 Beach Road, Sea Point</p>
+                                <div class="schedule-client">
+                                    <img src="https://via.placeholder.com/30x30" alt="Client Avatar">
+                                    <span>Sarah & Mike Thompson</span>
+                                </div>
+                            </div>
+                            <div class="schedule-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">
+                                <span>11:00</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h3>Client Meeting</h3>
+                                <p>Office - Discussion about listing requirements</p>
+                                <div class="schedule-client">
+                                    <img src="https://via.placeholder.com/30x30" alt="Client Avatar">
+                                    <span>John Peterson</span>
+                                </div>
+                            </div>
+                            <div class="schedule-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-item">
+                            <div class="schedule-time">
+                                <span>15:30</span>
+                            </div>
+                            <div class="schedule-details">
+                                <h3>Follow-up Calls</h3>
+                                <p>5 potential buyers from weekend show house</p>
+                            </div>
+                            <div class="schedule-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="recent-leads">
+                    <div class="section-header">
+                        <h2>Recent Leads</h2>
+                        <a href="leads.html" class="view-all">View All</a>
+                    </div>
+                    
+                    <div class="leads-list">
+                        <div class="lead-item">
+                            <div class="lead-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Lead Avatar">
+                                <div>
+                                    <h3>Mary Williams</h3>
+                                    <p>Looking for 3-bed apartment in Sandton</p>
+                                </div>
+                            </div>
+                            <div class="lead-status new">
+                                <span>New</span>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="lead-item">
+                            <div class="lead-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Lead Avatar">
+                                <div>
+                                    <h3>Robert Johnson</h3>
+                                    <p>Interested in selling property in Camps Bay</p>
+                                </div>
+                            </div>
+                            <div class="lead-status contacted">
+                                <span>Contacted</span>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="lead-item">
+                            <div class="lead-info">
+                                <img src="https://via.placeholder.com/40x40" alt="Lead Avatar">
+                                <div>
+                                    <h3>Jessica Smith</h3>
+                                    <p>Wants to view properties in Fourways area</p>
+                                </div>
+                            </div>
+                            <div class="lead-status qualified">
+                                <span>Qualified</span>
+                            </div>
+                            <div class="lead-actions">
+                                <button class="btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </button>
+                                <button class="btn-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="performance">
+                    <div class="section-header">
+                        <h2>Performance</h2>
+                        <div class="period-selector">
+                            <button class="period-btn active">Week</button>
+                            <button class="period-btn">Month</button>
+                            <button class="period-btn">Year</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <img src="https://via.placeholder.com/800x300" alt="Performance Chart" class="chart-placeholder">
+                    </div>
+                </section>
+                
+                <section class="notifications">
+                    <div class="section-header">
+                        <h2>Notifications</h2>
+                        <a href="#" class="view-all">Mark All as Read</a>
+                    </div>
+                    
+                    <div class="notification-list">
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p><strong>New Lead:</strong> David Thompson submitted an inquiry about property in Bryanston</p>
+                                <span class="notification-time">2 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p><strong>New Message:</strong> Sarah Williams replied to your WhatsApp message</p>
+                                <span class="notification-time">3 hours ago</span>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p><strong>Reminder:</strong> Client meeting with Johnson family tomorrow at 10:00</p>
+                                <span class="notification-time">Yesterday</span>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="notification-content">
+                                <p><strong>Follow-up Required:</strong> No contact with Smith family for 7 days</p>
+                                <span class="notification-time">2 days ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast-container">
+        <div class="toast success">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-content">
+                <p><strong>Success!</strong> Task marked as complete.</p>
+            </div>
+            <button class="toast-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Toast message demo
+        setTimeout(() => {
+            document.querySelector('.toast').classList.add('show');
+            
+            setTimeout(() => {
+                document.querySelector('.toast').classList.remove('show');
+            }, 5000);
+        }, 2000);
+        
+        // Close toast on click
+        document.querySelector('.toast-close').addEventListener('click', function() {
+            document.querySelector('.toast').classList.remove('show');
+        });
+        
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+            document.querySelector('.dashboard-main').classList.toggle('expanded');
+        });
+    </script>
+</body>
+</html>
