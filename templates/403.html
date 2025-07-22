@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access denied - AgentNest">
+    <title>Access Denied | AgentNest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            background-image: linear-gradient(135deg, rgba(230, 57, 70, 0.05) 25%, transparent 25%),
+                              linear-gradient(225deg, rgba(230, 57, 70, 0.05) 25%, transparent 25%),
+                              linear-gradient(45deg, rgba(230, 57, 70, 0.05) 25%, transparent 25%),
+                              linear-gradient(315deg, rgba(230, 57, 70, 0.05) 25%, transparent 25%);
+            background-size: 50px 50px;
+        }
+        
+        .error-content {
+            max-width: 600px;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .error-description {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .gate-icon {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+        }
+        
+        .property-illustration {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        
+        .property-gate {
+            width: 100%;
+            height: 100px;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            position: relative;
+            margin-top: 50px;
+        }
+        
+        .property-gate::before, .property-gate::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 120px;
+            background-color: var(--dark-color);
+            top: -10px;
+        }
+        
+        .property-gate::before {
+            left: 30px;
+        }
+        
+        .property-gate::after {
+            right: 30px;
+        }
+        
+        .property-sign {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border: 2px solid var(--dark-color);
+            border-radius: 4px;
+            padding: 10px 20px;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .restricted-tape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--primary-color),
+                var(--primary-color) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            opacity: 0.2;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div class="error-content">
+            <div class="gate-icon">
+                <i class="fas fa-ban"></i>
+            </div>
+            
+            <div class="property-illustration">
+                <div class="property-gate">
+                    <div class="property-sign">NO ACCESS</div>
+                    <div class="restricted-tape"></div>
+                </div>
+            </div>
+            
+            <h1 class="error-code">403</h1>
+            <h2 class="error-message">Access Denied</h2>
+            <p class="error-description">
+                Sorry, but you don't have the necessary permissions to access this property. This area is restricted to authorized personnel only.
+            </p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="login.html" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
